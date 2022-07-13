@@ -17,13 +17,30 @@ class Home extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.red[600]
         ),
-      body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-        color: Colors.grey,
-        child: Text('hello'),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center, // default value
+        children: [
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+            // margin: EdgeInsets.all(100),
+            color: Colors.grey,
+            child: Text('hello'),
+          ),
+          ElevatedButton.icon(
+            onPressed: () {print('hello');}, 
+            label: Text('Button'),
+            icon: Icon(
+              Icons.mail
+            ),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.amber,
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {print('you clicked me');},
         backgroundColor: Colors.red[600],
         child: Text('click'),
       ),
