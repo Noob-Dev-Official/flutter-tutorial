@@ -17,25 +17,32 @@ class Home extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.red[600]
         ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center, // default value
+      body: Column(
+
         children: [
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-            // margin: EdgeInsets.all(100),
-            color: Colors.grey,
-            child: Text('hello'),
+          Row(
+            children: [
+              Text('hello'),
+              Text('bye')
+            ],
           ),
-          ElevatedButton.icon(
-            onPressed: () {print('hello');}, 
-            label: Text('Button'),
-            icon: Icon(
-              Icons.mail
-            ),
-            style: ElevatedButton.styleFrom(
-              primary: Colors.amber,
-            ),
+          Container(
+            padding: EdgeInsets.all(20),
+            // margin: EdgeInsets.all(100),
+            color: Colors.cyan,
+            child: Text('one'),
+          ),
+         Container(
+            padding: EdgeInsets.all(30),
+            // margin: EdgeInsets.all(100),
+            color: Colors.pink,
+            child: Text('two'),
+          ),
+          Container(
+            padding: EdgeInsets.all(40),
+            // margin: EdgeInsets.all(100),
+            color: Colors.amber,
+            child: Text('three'),
           ),
         ],
       ),
