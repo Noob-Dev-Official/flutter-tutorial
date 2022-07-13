@@ -1,10 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
-  home: Home()
-));
-
+void main() => runApp(MaterialApp(home: Home()));
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -15,10 +12,10 @@ class Home extends StatelessWidget {
       appBar: AppBar(
           title: Text('Hello'),
           centerTitle: true,
-          backgroundColor: Colors.red[600]
-        ),
+          backgroundColor: Colors.red[600]),
       body: Row(
         children: [
+          Expanded(flex: 2, child: Image.asset('assets/space2.jpg')),
           Expanded(
             flex: 2,
             child: Container(
@@ -46,11 +43,12 @@ class Home extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {print('you clicked me');},
+        onPressed: () {
+          print('you clicked me');
+        },
         backgroundColor: Colors.red[600],
         child: Text('click'),
       ),
-
     );
   }
 }
