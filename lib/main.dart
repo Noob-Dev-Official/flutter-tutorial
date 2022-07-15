@@ -1,54 +1,34 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(home: Home()));
+void main() => runApp(MaterialApp(home: QuoteList()));
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class QuoteList extends StatefulWidget {
+  const QuoteList({Key? key}) : super(key: key);
+
+  @override
+  State<QuoteList> createState() => _QuoteListState();
+}
+
+class _QuoteListState extends State<QuoteList> {
+  List<String> quotes = [
+    'Never give up',
+    'Honesty is the best policy',
+    'The truth is rarely pure and never simple'
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
-          title: Text('Hello'),
-          centerTitle: true,
-          backgroundColor: Colors.red[600]),
-      body: Row(
-        children: [
-          Expanded(flex: 2, child: Image.asset('assets/space2.jpg')),
-          Expanded(
-            flex: 2,
-            child: Container(
-              padding: EdgeInsets.all(30),
-              color: Colors.cyan,
-              child: Text('1'),
-            ),
-          ),
-          Expanded(
-            flex: 3,
-            child: Container(
-              padding: EdgeInsets.all(30),
-              color: Colors.red[400],
-              child: Text('2'),
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              padding: EdgeInsets.all(30),
-              color: Colors.green,
-              child: Text('3'),
-            ),
-          ),
-        ],
+        title: Text('Awesome Quotes'),
+        centerTitle: true,
+        backgroundColor: Colors.redAccent,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print('you clicked me');
-        },
-        backgroundColor: Colors.red[600],
-        child: Text('click'),
-      ),
+      body: Column(
+        children: quotes.map((quote) => Text(quote)).toList(),
+      )
     );
   }
 }
